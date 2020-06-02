@@ -9,10 +9,12 @@ const ingredients = [
   "Приправы",
 ];
 
-const create = ingredients.map((item) => document.createElement("li"));
+const createEl = ingredients
+  .map((item) => {
+    return `<li>${item}</li>`;
+  })
+  .join("");
 
-const addText = create.map((item) => (item.textContent = ingredients));
-
-const search = document.querySelector("#ingredients");
-search.append(...create);
-console.log(search);
+const searchUl = document.querySelector("#ingredients");
+searchUl.innerHTML = createEl;
+console.log(searchUl);
