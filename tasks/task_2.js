@@ -11,6 +11,8 @@ const ingredients = [
 
 const create = ingredients.map((item) => document.createElement("li"));
 
-const search = document.querySelector("ul#ingredients");
+const addText = create.map((item) => (item.textContent = ingredients));
+
+const search = document.querySelector("#ingredients");
 search.append(...create);
 console.log(search);
