@@ -1,3 +1,5 @@
+// debugger;
+
 const images = [
   {
     url:
@@ -15,3 +17,13 @@ const images = [
     alt: "Group of Horses Running",
   },
 ];
+
+const createEl = images
+  .map((item) => {
+    return `<li><img src='${item.url}' alt='${item.alt}' width='300' height='200'></li>`;
+  })
+  .join("");
+
+const search = document.querySelector("#gallery");
+search.insertAdjacentHTML("afterbegin", createEl);
+console.log(search);
